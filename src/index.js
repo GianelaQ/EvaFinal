@@ -5,6 +5,7 @@ const productoRoutes = require('./routes/productoRoutes');
 const categoriaRoutes = require('./routes/categoriaRoutes');
 const ordenRoutes = require('./routes/ordenRoutes');
 const detalleOrdenRoutes = require('./routes/detalleOrdenRoutes');
+const authRoutes = require('./routes/authRoutes'); 
 
 const app = express();
 const port = 3000;
@@ -16,8 +17,10 @@ app.use('/productos', productoRoutes);
 app.use('/categorias', categoriaRoutes);
 app.use('/ordenes', ordenRoutes);
 app.use('/detalles_orden', detalleOrdenRoutes); 
+app.use('/auth', authRoutes); 
 
 app.listen(port, () => {
     console.log(`Servidor iniciado en el puerto ${port}`);
 });
 
+module.exports = app;
